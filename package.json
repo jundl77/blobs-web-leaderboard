@@ -1,32 +1,33 @@
 {
-  "name": "izouwebapp",
-  "version": "0.0.1",
-  "description": "The front-end website of Izou. This is where anything pertaining to Izou can be managed.",
+  "name": "blobs-web-leaderboard",
+  "version": "1.0.0",
+  "description": "An online leaderboard for all of blobs.",
   "main": "index.html",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/intellimate/IzouWebApp.git"
+    "url": "git+https://github.com/swing-deepdive/blobs-web-leaderboard.git"
   },
   "keywords": [
-    "izou",
-    "front-end",
-    "web",
-    "site",
-    "app"
+    "blobs",
+    "java",
+    "education",
+    "leaderboard",
+    "highscores",
+    "swing"
   ],
-  "author": "Intellimate",
-  "license": "ISC",
+  "author": "swing-deepdive",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/intellimate/IzouWebApp/issues"
+    "url": "https://github.com/swing-deepdive/blobs-web-leaderboard/issues"
   },
-  "homepage": "https://github.com/intellimate/IzouWebApp#readme",
+  "homepage": "https://github.com/swing-deepdive/blobs-web-leaderboard#readme",
   "engines": {
     "npm": ">=3.0.0",
     "node": ">=5.0.0"
   },
   "dependencies": {
     "react": "^0.14.6",
-    "react-dom": "^0.14.6",
+    "react-dom": "^0.14.6"
   },
   "devDependencies": {
     "babel-loader": "^6.2.0",
@@ -38,13 +39,15 @@
     "babel-preset-react": "^6.3.13",
     "eslint": "^2.11.1",
     "eslint-plugin-react": "^5.1.1",
+    "npm-run-all": "^2.1.1",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
     "prebuild": "npm-run-all lint",
-    "build": "webpack --config config/webpack.config.js",
-    "dev-server": "webpack-dev-server --content-base src",
-    "lint": "eslint .",
+    "build": "webpack",
+    "build:dev": "webpack",
+    "dev-server": "webpack-dev-server --content-base build",
+    "lint": "eslint ."
   }
 }

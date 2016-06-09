@@ -1,2 +1,12 @@
-# IDE files and folders
+# Project folders
+node_modules
+build
+
+# Webstorm folders
 .idea
+
+# Build files
+src/bundle.js
+
+# Other
+npm-debug.log

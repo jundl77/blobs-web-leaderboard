@@ -12,9 +12,5 @@
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "globals": {
     "document": false
-  },
-  "env": {
-    "node": true,
-    "mocha": true
   }
 }
