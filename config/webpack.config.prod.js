@@ -2,8 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-  context: path.join(__dirname),
-  entry: "./src/js/index.js",
+  entry: "../src/js/index.js",
   module: {
     loaders: [
       {
@@ -18,7 +17,7 @@ module.exports = {
     ]
   },
   output: {
-    path: "./build",
+    path: "../build",
     filename: "bundle.min.js"
   },
   plugins: [

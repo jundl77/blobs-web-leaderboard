@@ -45,9 +45,11 @@
   },
   "scripts": {
     "prebuild": "npm-run-all lint",
-    "build": "webpack",
-    "build:dev": "webpack",
-    "dev-server": "webpack-dev-server --content-base build",
+    "build": "webpack --config config/webpack.config.prod.js",
+    "build:dev": "webpack --config config/webpack.config.dev.js",
+    "build:dev:watch": "webpack --config config/webpack.config.dev.js --watch",
+    "server:dev": "webpack-dev-server --content-base src",
+    "server:prod": "webpack-dev-server --content-base build",
     "lint": "eslint ."
   }
 }
