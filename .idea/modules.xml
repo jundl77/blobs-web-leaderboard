@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/blobs-leaderboard.iml" filepath="$PROJECT_DIR$/.idea/blobs-leaderboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/blobs-web-leaderboard.iml" filepath="$PROJECT_DIR$/.idea/blobs-web-leaderboard.iml" />
     </modules>
   </component>
 </project>
