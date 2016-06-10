@@ -7,7 +7,7 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules)/,
+        exclude: /(node_modules)|rankingWorker.js/,
         loader: 'babel-loader',
         query: {
           presets: ['react', 'es2015'],
