@@ -4,6 +4,7 @@
 build/*
 config/*
 bundle.js
+bundle.min.js
 
 # Other files
 *.hot-update.js

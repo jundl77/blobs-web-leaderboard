@@ -37,9 +37,19 @@ export default class LeaderboardTable extends React.Component {
                 success: function (response) {
                     let jsonResponse = JSON.parse(response)
                     updateRankings(jsonResponse)
+
+                    // Update data continuously
+                    setTimeout(function() {
+                        fetchRankings(reactComponent)
+                    }, 500)
                 },
                 error: function (response) {
                     console.log("error: " + response)
+
+                    // Update data continuously
+                    setTimeout(function() {
+                        fetchRankings(reactComponent)
+                    }, 500)
                 }
             })
         }

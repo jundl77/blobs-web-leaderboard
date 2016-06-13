@@ -3,6 +3,15 @@
     src: url(../resources/fonts/PixelSplitter-Bold.ttf);
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
 .title {
     margin-top: 5%;
     font-size: 70px;
@@ -28,6 +37,7 @@
 
 .leaderboardTable {
     margin: 5% auto;
+    padding-bottom: 5%;
     width: 30%;
     text-align: center;
     font-size: 30px;
@@ -47,6 +57,39 @@ th {
     text-align: center;
     padding: 10px 0;
     color: white;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    margin-left: -1vw;
+    margin-bottom: -10px;
+    height: 8vh;
+    background-color: #171516;
+}
+
+.links {
+    display: inline-block;
+}
+
+.links div {
+    display: inline-block;
+}
+
+.github {
+   margin-left: 3vw;
+}
+
+.travis {
+    margin-left: 1vw;
+}
+
+.links div img {
+    margin-top: 2vh;
+
+    width: 30px;
+    height: 30px;
 }
 
 .background {
