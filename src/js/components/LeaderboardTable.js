@@ -9,37 +9,36 @@ export default class LeaderboardTable extends React.Component {
     constructor() {
         super();
         this.state = {
-            rankings: [{}]
+            rankings: []
         }
 
         updateRankings = this;
     }
 
     componentWillMount(){
-        window.jsonCallback = function(data) {
-            console.log("callback")
+        function fetchRankings(reactComponent) {
 
-            console.log(data);
-        };
+            function updateRankings(jsonRankings) {
+                let rankings = []
 
-        function fetchRankings() {
-            let rankings
-
-            function parseRankings(jsonRankings) {
                 for (var key in jsonRankings) {
-                    console.log(key)
+                    rankings.push(new Ranking(jsonRankings[key].Name,
+                        jsonRankings[key].Score,jsonRankings[key].game_id))
                 }
+                console.log(rankings)
+
+                reactComponent.setState({
+                    rankings: rankings
+                })
             }
 
             $.ajax({
-                url: 'http://query.yahooapis.com/v1/public/yql?q=select * from html where url="'
-                        + ENV_VARS.DATA_URL + '"&format=json',
+                url: ENV_VARS.DATA_URL,
                 type: 'GET',
                 dataType: 'html',
                 success: function(response) {
                     let jsonResponse = JSON.parse(response)
-                    let data = JSON.parse(jsonResponse.query.results.body)
-                    parseRankings(data)
+                    updateRankings(jsonResponse)
                 },
                 error: function(response) {
                     console.log("error: " + response)
@@ -47,7 +46,7 @@ export default class LeaderboardTable extends React.Component {
             })
         }
 
-        fetchRankings()
+        fetchRankings(this)
     }
 
     render() {
@@ -62,7 +61,10 @@ export default class LeaderboardTable extends React.Component {
         });
 
         this.state.rankings.forEach(function(ranking) {
-            entries.push(<LeaderboardRow score={ranking.score} name={ranking.name} />);
+            if (this.props.gameId === null
+                || this.props.gameId === '' || this.props.gameId === ranking.gameId + '') {
+                entries.push(<LeaderboardRow score={ranking.score} name={ranking.name}/>);
+            }
         }.bind(this));
         
         return (
@@ -79,4 +81,8 @@ export default class LeaderboardTable extends React.Component {
     }
 }
 
-export default LeaderboardTable
+var Ranking = function (name, score, gameId) {
+    this.name = name
+    this.score = score
+    this.gameId = gameId
+}
