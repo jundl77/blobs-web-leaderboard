@@ -1,7 +1,7 @@
 import React from "react";
 import LeaderboardRow from "./LeaderboardRow";
 import ENV_VARS from "../../../config/ENV_VARS";
-import $ from 'jquery'
+import $ from "jquery";
 
 
 var updateRankings;
@@ -15,7 +15,7 @@ export default class LeaderboardTable extends React.Component {
         updateRankings = this;
     }
 
-    componentWillMount(){
+    componentWillMount() {
         function fetchRankings(reactComponent) {
 
             function updateRankings(jsonRankings) {
@@ -23,9 +23,8 @@ export default class LeaderboardTable extends React.Component {
 
                 for (var key in jsonRankings) {
                     rankings.push(new Ranking(jsonRankings[key].Name,
-                        jsonRankings[key].Score,jsonRankings[key].game_id))
+                        jsonRankings[key].Score, jsonRankings[key].game_id))
                 }
-                console.log(rankings)
 
                 reactComponent.setState({
                     rankings: rankings
@@ -36,11 +35,11 @@ export default class LeaderboardTable extends React.Component {
                 url: ENV_VARS.DATA_URL,
                 type: 'GET',
                 dataType: 'html',
-                success: function(response) {
+                success: function (response) {
                     let jsonResponse = JSON.parse(response)
                     updateRankings(jsonResponse)
                 },
-                error: function(response) {
+                error: function (response) {
                     console.log("error: " + response)
                 }
             })
@@ -60,13 +59,13 @@ export default class LeaderboardTable extends React.Component {
             }
         });
 
-        this.state.rankings.forEach(function(ranking) {
+        this.state.rankings.forEach(function (ranking) {
             if (this.props.gameId === null
                 || this.props.gameId === '' || this.props.gameId === ranking.gameId + '') {
                 entries.push(<LeaderboardRow score={ranking.score} name={ranking.name}/>);
             }
         }.bind(this));
-        
+
         return (
             <table className="leaderboardTable">
                 <thead>

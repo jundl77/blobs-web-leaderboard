@@ -2,12 +2,12 @@ import React from "react";
 
 
 var GameIDTextField = React.createClass({
-    handleChange: function() {
+    handleChange: function () {
         this.props.onUserInput(
             this.refs.gameIdInput.value
         );
     },
-    
+
     render() {
         return (
             <div className="gameIdtextFieldDiv">

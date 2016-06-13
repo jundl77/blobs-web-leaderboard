@@ -6,7 +6,7 @@ var LeaderboardRow = React.createClass({
         return (
             <tr>
                 <td className="tableEntry">{this.props.score}</td>
-                <td className="tableEntry" >{this.props.name}</td>
+                <td className="tableEntry">{this.props.name}</td>
             </tr>
         )
     }
