@@ -1,8 +1,6 @@
 import React from "react";
 import LeaderboardRow from "./LeaderboardRow";
-import ENV_VARS from "../../../config/ENV_VARS";
 import $ from "jquery";
-
 
 var updateRankings;
 export default class LeaderboardTable extends React.Component {
@@ -31,8 +29,9 @@ export default class LeaderboardTable extends React.Component {
                 })
             }
 
+            var url = "http://blobs-swing.azurewebsites.net/tables/highscore?zumo-api-version=2.0.0"
             $.ajax({
-                url: ENV_VARS.DATA_URL,
+                url: url,
                 type: 'GET',
                 dataType: 'html',
                 success: function (response) {

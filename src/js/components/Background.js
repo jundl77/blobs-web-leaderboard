@@ -1,9 +1,9 @@
 import React from "react";
-import ENV_VARS from "../../../config/ENV_VARS";
+import image from "../../resources/img/background.jpg"
 
 const Background = () => (
     <div className="background">
-        <img src={ENV_VARS.BG_IMG_PATH}/>
+        <img src={image}/>
     </div>
 )
 
