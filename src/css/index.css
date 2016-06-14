@@ -82,14 +82,14 @@ th {
 }
 
 .travis {
-    margin-left: 1vw;
+    margin-left: 1.5vw;
 }
 
 .links div img {
     margin-top: 2vh;
 
-    width: 30px;
-    height: 30px;
+    width: 5vh;
+    height: 5vh;
 }
 
 .background {
