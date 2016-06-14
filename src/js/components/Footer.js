@@ -9,7 +9,7 @@ const Footer = () => (
                 <a href="https://github.com/swing-deepdive/blobs"><img src={github_img}/></a>
             </div>
             <div className="travis">
-                <a href="https://github.com/swing-deepdive/blobs"><img src={travis_img}/></a>
+                <a href="https://travis-ci.org/swing-deepdive/blobs"><img src={travis_img}/></a>
             </div>
         </div>
     </div>
